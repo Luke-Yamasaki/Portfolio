@@ -5,39 +5,42 @@ import Link from "next/link";
 import { useVisited } from "../context/index";
 
 //CSS
-import styles from '../styles/navigation.module.css';
-
+import styles from "../styles/navigation.module.css";
 
 export const NavLinks = () => {
-    const { setVisited } = useVisited();
+  const { setVisited } = useVisited();
 
-    const handleNavigation = () => {
-        sessionStorage.setItem('visited', 'true');
-        return setVisited(true);
-    }
+  const handleNavigation = () => {
+    sessionStorage.setItem("visited", "true");
+    return setVisited(true);
+  };
 
-    return (
-        <div className={styles.navLinksBox}>
-            <Link href='/design'>
-                <a onClick={handleNavigation} className={styles.navLink}>
-                    Design
-                </a>
-            </Link>
-            <Link href='/development'>
-                <a onClick={handleNavigation} className={styles.navLink}>
-                    Development
-                </a>
-            </Link>
-            <Link href='/about'>
-                <a onClick={handleNavigation} className={styles.navLink}>
-                    About
-                </a>
-            </Link>
-            <Link href='contact'>
-                <a onClick={handleNavigation} className={styles.navLink}>
-                    Contact
-                </a>
-            </Link>
-        </div>
-    )
-}
+  return (
+    <div className={styles.navLinksBox}>
+      <Link
+        href="/design"
+        onClick={handleNavigation}
+        className={styles.navLink}
+      >
+        Design
+      </Link>
+      <Link
+        href="/development"
+        onClick={handleNavigation}
+        className={styles.navLink}
+      >
+        Development
+      </Link>
+      <Link href="/about" onClick={handleNavigation} className={styles.navLink}>
+        About
+      </Link>
+      <Link
+        href="/contact"
+        onClick={handleNavigation}
+        className={styles.navLink}
+      >
+        Contact
+      </Link>
+    </div>
+  );
+};

@@ -11,7 +11,7 @@ export default function About() {
     return (
         <Layout>
             <Head>
-                <title>Luke Yamasaki | About</title>
+                <title>About | Luke Yamasaki</title>
             </Head>
             <section className={styles.aboutSection}>
                 <div className={styles.aboutBox}>

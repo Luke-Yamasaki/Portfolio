@@ -11,7 +11,7 @@ export default function Contact() {
     return (
         <Layout>
             <Head>
-                <title>Luke Yamasaki | Contact</title>
+                <title>Contact | Luke Yamasaki</title>
             </Head>
             <section className={styles.contact}>
                 <div className={styles.contactBox}>

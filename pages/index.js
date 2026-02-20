@@ -14,7 +14,7 @@ export default function Home() {
   return (
     <Layout home>
       <Head>
-        <title>Luke Yamasaki | Portfolio</title>
+        <title>Portfolio | Luke Yamasaki</title>
       </Head>
       <section className={styles.welcomeInfo}>
           <div className={styles.greetBox}>

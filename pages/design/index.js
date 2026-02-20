@@ -12,7 +12,7 @@ export default function Design() {
     return (
         <Layout>
             <Head>
-                <title>Luke Yamasaki | Design</title>
+                <title>Design | Luke Yamasaki</title>
             </Head>
             <section className={styles.projects}>
                 <h1 className={styles.projectTitle}>
