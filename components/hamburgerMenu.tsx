@@ -1,13 +1,7 @@
-//Next.js
 import Link from "next/link";
-
-//React
 import { useState } from "react";
-
-//Context
 import { useVisited } from "../context/index";
 
-//CSS
 import styles from "../styles/navigation.module.css";
 
 export const HamburgerMenu = () => {
@@ -119,3 +113,4 @@ export const HamburgerMenu = () => {
     </aside>
   );
 };
+

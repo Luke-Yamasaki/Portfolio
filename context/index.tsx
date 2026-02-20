@@ -17,3 +17,4 @@ export default function VisitedProvider(props) {
         </visitedContext.Provider>
     )
 };
+
