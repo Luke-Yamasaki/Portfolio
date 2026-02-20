@@ -1,20 +1,43 @@
 //React
-import { createContext, useContext, useState, useEffect } from 'react';
+import React, {
+  createContext,
+  useContext,
+  useState,
+  useEffect,
+  Dispatch,
+  SetStateAction,
+  ReactNode,
+} from 'react';
 
-export const visitedContext = createContext();
+type VisitedContextType = {
+  visited: boolean;
+  setVisited: Dispatch<SetStateAction<boolean>>;
+};
+
+export const visitedContext = createContext<VisitedContextType>({
+  visited: false,
+  setVisited: () => {},
+});
+
 export const useVisited = () => useContext(visitedContext);
 
-export default function VisitedProvider(props) {
-    const [visited, setVisited] = useState('');
-
-    useEffect(() => {
-        sessionStorage.getItem('visited') === 'true' ? setVisited(true) : setVisited(false);
-    },[])
-
-    return (
-        <visitedContext.Provider value={{ visited, setVisited }}>
-            {props.children}
-        </visitedContext.Provider>
-    )
+type VisitedProviderProps = {
+  children: ReactNode;
 };
+
+export default function VisitedProvider(props: VisitedProviderProps) {
+  const [visited, setVisited] = useState<boolean>(false);
+
+  useEffect(() => {
+    sessionStorage.getItem('visited') === 'true'
+      ? setVisited(true)
+      : setVisited(false);
+  }, []);
+
+  return (
+    <visitedContext.Provider value={{ visited, setVisited }}>
+      {props.children}
+    </visitedContext.Provider>
+  );
+}
 
