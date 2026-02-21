@@ -1,11 +1,10 @@
-//Next.js
+'use client';
 import Link from "next/link";
 
 //Context
-import { useVisited } from "../context/index";
-
+import { useVisited } from '@/context/index';
 //CSS
-import styles from "../styles/navigation.module.css";
+import styles from '@/styles/navigation.module.css';
 
 export const NavLinks = () => {
   const { setVisited } = useVisited();

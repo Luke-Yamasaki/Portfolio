@@ -1,14 +1,14 @@
+'use client';
 import Link from "next/link";
 import { useState } from "react";
-import { useVisited } from "../context/index";
-
-import styles from "../styles/navigation.module.css";
+import { useVisited } from '@/context/index';
+import styles from '@/styles/navigation.module.css';
 
 export const HamburgerMenu = () => {
   const [showMenu, setShowMenu] = useState(false);
   const { visited, setVisited } = useVisited();
 
-  const handleMenu = (e) => {
+  const handleMenu = (e: React.MouseEvent) => {
     e.preventDefault();
     return setShowMenu(!showMenu);
   };

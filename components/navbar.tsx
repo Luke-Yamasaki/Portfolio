@@ -1,4 +1,4 @@
-//Next.js
+'use client';
 import Link from "next/link";
 import Image from "next/image";
 
@@ -7,12 +7,9 @@ import { NavLinks } from "./navLinks";
 import { HamburgerMenu } from "./hamburgerMenu";
 
 //CSS
-import styles from "../styles/navigation.module.css";
+import styles from '@/styles/navigation.module.css';
 
-//Images
-import logo from "../public/images/LKY_Logo.png";
-
-export const NavBar = ({ visited }) => {
+export const NavBar = ({ visited }: { visited: boolean }) => {
   return (
     <nav className={visited ? styles.regNav : styles.welcomeNav}>
       <ul className={styles.navList}>
@@ -22,7 +19,7 @@ export const NavBar = ({ visited }) => {
               <Image
                 priority
                 className={styles.logo}
-                src={logo}
+                src="/images/LKY_Logo.png"
                 height={30}
                 width={30}
                 alt="Luke Yamasaki's logo"
